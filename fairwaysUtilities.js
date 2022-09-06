@@ -31,6 +31,13 @@ function myUtilitiesTestFunction() {
 
   var sheetObjecrts = getRowsData(testSheet);
   Logger.log(JSON.stringify(sheetObjecrts, null,3));
+  // test function fileChangesDateRange(folderId, startDate, endDate)  --> Not working
+  // last 24 hours
+  var nowDate = new Date().getTime();
+  var oneDaysBeforeNow = nowDate - 3600 * 1000 * 24;
+  var folderId = "0B5biGEQ1GLz0U2tLVktJNmFLejg";
+  var cutOffDate = new Date(oneDaysBeforeNow);
+  //fileChangesDateRange(folderId, oneDaysBeforeNow, nowDate);
 }
 
 
@@ -294,6 +301,27 @@ function normalizeHeader(header) {
 
   //Logger.log("header: "+key);
   return key;
+}
+
+/**
+ * 
+ */
+function fileChangesDateRange(folderId, firstDate, lastDate) {
+  var firstDateAsString = Utilities.formatDate(new Date(firstDate), "GMT", "yyyy-MM-dd");
+  var lastDateAsString =  Utilities.formatDate(new Date(lastDate), "GMT", "yyyy-MM-dd");
+  
+  
+//where B > date '"&TEXT(A2,"yyyy-mm-dd")&"' and B <= date '"&TEXT(B2,"yyyy-mm-dd")&"' 
+  //var files = DriveApp.getFolderById(folderId).searchFiles('modifiedDate > "' + firstDateAsString + ' and modifiedDate < "' +lastDateAsString +'"');
+
+  // var files = DriveApp.getFolderById(folderId).searchFiles('createdDate > "' + cutOffDateAsString + '"');
+
+  var query = `'${folderId}' in parents and modifiedDate > '${firstDateAsString}' and modifiedDate < '${lastDateAsString}' and trashed=false`;
+  Logger.log(query);
+  var url = encodeURI(`https://www.googleapis.com/drive/v3/files?q=${query}`);
+  var res = UrlFetchApp.fetch(url, { headers: { authorization: "Bearer " + ScriptApp.getOAuthToken() } });
+  var fileList = res.getContentText();
+  console.log(fileList)
 }
 
 /**
