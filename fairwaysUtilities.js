@@ -27,10 +27,10 @@ function myUtilitiesTestFunction() {
   var testCellValue = getCellValueByColumnName(testSheet, testUrlColumnName, testRowNumber);
   Logger.log(`getCellValueByColumnName: ${getCellValueByColumnName(testSheet, testUrlColumnName, testRowNumber)}`);
   Logger.log(`getColumnValuesByName: ${getColumnValuesByName(testSheet, testUrlColumnName)}`);
- // setFormEditResponseUrls(testUrlSheet, testUrlRowNumber, testFormURL, testFormEditColumnIndex);
-
+  // setFormEditResponseUrls(testUrlSheet, testUrlRowNumber, testFormURL, testFormEditColumnIndex);
+  // getRowsData(testSheet) creates an aray of JSON objects with headings as keys
   var sheetObjecrts = getRowsData(testSheet);
-  Logger.log(JSON.stringify(sheetObjecrts, null,3));
+  Logger.log(JSON.stringify(sheetObjecrts, null, 3));
   // test function fileChangesDateRange(folderId, startDate, endDate)  --> Not working
   // last 24 hours
   var nowDate = new Date().getTime();
@@ -212,11 +212,6 @@ function getRowsData(sheet, range, columnHeadersRowIndex) {
   return getObjects(dataRange.getValues(), normalizeHeaders(headers));
 }
 
-// For every row of data in data, generates an object that contains the data. Names of
-// object fields are defined in keys.
-// Arguments:
-//   - data: JavaScript 2d array
-//   - keys: Array of Strings that define the property names for the objects to create
 /**
  * For every row of data in data, generates an object that contains the data. 
  * Names of object fields are defined in keys.
@@ -308,10 +303,10 @@ function normalizeHeader(header) {
  */
 function fileChangesDateRange(folderId, firstDate, lastDate) {
   var firstDateAsString = Utilities.formatDate(new Date(firstDate), "GMT", "yyyy-MM-dd");
-  var lastDateAsString =  Utilities.formatDate(new Date(lastDate), "GMT", "yyyy-MM-dd");
-  
-  
-//where B > date '"&TEXT(A2,"yyyy-mm-dd")&"' and B <= date '"&TEXT(B2,"yyyy-mm-dd")&"' 
+  var lastDateAsString = Utilities.formatDate(new Date(lastDate), "GMT", "yyyy-MM-dd");
+
+
+  //where B > date '"&TEXT(A2,"yyyy-mm-dd")&"' and B <= date '"&TEXT(B2,"yyyy-mm-dd")&"' 
   //var files = DriveApp.getFolderById(folderId).searchFiles('modifiedDate > "' + firstDateAsString + ' and modifiedDate < "' +lastDateAsString +'"');
 
   // var files = DriveApp.getFolderById(folderId).searchFiles('createdDate > "' + cutOffDateAsString + '"');
