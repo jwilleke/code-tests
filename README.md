@@ -2,7 +2,7 @@
 
 Google Clasp to pull-push to Google Apps Script and keep code backed up in GitHub
 
-## GitHub Repository 
+## GitHub Repository
 
 <https://github.com/jwilleke/code-tests>
 
