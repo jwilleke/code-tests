@@ -7,6 +7,13 @@
         "version": "7",
         "libraryId": "1zOlHMOpO89vqLPe5XpC-wzA9r5yaBkWt_qFjKqFNsIZtNJ-iUjBYDt-x"
       }
+    ],
+    "enabledAdvancedServices": [
+      {
+        "userSymbol": "AdminDirectory",
+        "version": "directory_v1",
+        "serviceId": "admin"
+      }
     ]
   },
   "exceptionLogging": "STACKDRIVER",
