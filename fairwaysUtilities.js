@@ -5,11 +5,11 @@ function myUtilitiesTestFunction() {
   var testSpreadsSheetID = "1_aL5HOiEVUCf9Zz_qocSRdnd9ZSqBDT9tdke6V4rH_I";
   var testSS = SpreadsheetApp.openById(testSpreadsSheetID); //  .openByUrl('https://docs.google.com/spreadsheets/d/1_aL5HOiEVUCf9Zz_qocSRdnd9ZSqBDT9tdke6V4rH_I/edit');
   //Logger.log(testSS.getName());
-  var testSheetname = "Sheet1";
-  var testSheet = testSS.getSheetByName(testSheetname);
-  var testCopyToSheet = testSS.getSheetByName("sheet2");
+  var testSheetname = "myUtilitiesTest";
   var testColumnNumber = 2;
   var testRowNumber = 3;
+  var testSheet = testSS.getSheetByName(testSheetname);
+  var testCopyToSheet = testSS.getSheetByName("sheet2");
   // value sto test form URLs
   var testUrlSheetName = 'Form Responses 2';
   var testUrlSheet = testSS.getSheetByName(testUrlSheetName);
@@ -20,7 +20,7 @@ function myUtilitiesTestFunction() {
   var testUrlRowNumber = 7;
   //var testRange = getCellRangeByColumnName(testSheet, testColumnName, testRowNumber );
   //var testColumnRange = thisRange.getA1Notation();
-  Logger.log(`editUrleditUrlColumnIndex: ${testFormEditColumnIndex}`);
+  Logger.log(`==> in: ${testSheetname} in Column: "${testUrlColumnName} editUrleditUrlColumnIndex: ${testFormEditColumnIndex}`);
   Logger.log(`getColumnIndexByName: ${getColumnIndexByName(testSheet, testUrlColumnName)}`);
   Logger.log(`getCellRangeByColumnName: ${getCellRangeByColumnName(testSheet, testUrlColumnName, testRowNumber).getA1Notation()}`);
   Logger.log(`getColumnRangeByName: ${getColumnRangeByName(testSheet, testUrlColumnName).getA1Notation()}`);
@@ -51,10 +51,8 @@ function myUtilitiesTestFunction() {
 /**
  * gets range of a cell specified by a columnName and row
  */
-function getCellRangeByRow(sheet, row) {
-  let data = sheet.getDataRange().getValues();
-
-  if (column != -1) {
+function getCellRangeByRow(columnName, row) {
+  if (columnName != -1) {
     return sheet.getRange(row, sheet.getLastColumn(), 1, 1);
   }
 }

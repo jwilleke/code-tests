@@ -54,7 +54,7 @@ function getUserObject(userEmail) {
     Logger.log('User data:\n %s', JSON.stringify(user, null, 2));
   } catch (err) {
     // TODO (developer)- Handle exception from the API
-    Logger.log('Failed with error %s', err.message);
+    Logger.log('Failed with error %s', err);
   }
 }
 
