@@ -19,3 +19,16 @@ Works with the spreadsheet: <https://docs.google.com/spreadsheets/d/1_aL5HOiEVUC
 And the Form: <https://docs.google.com/forms/d/e/1FAIpQLScFVnjy5F7ctx0K-9ldJb3I_gp_jJUbjdrM7aCY8KvfJuqB9g/viewform>
 
 My Detailed Docs <https://docs.google.com/document/d/14jpnrHIrBDYQ5UzOLCdZSlv0WNclRf_cuOjsp-w_9ZQ/edit?usp=sharing>
+
+## CLASP
+
+<https://github.com/google/clasp>
+<https://medium.com/geekculture/how-to-write-google-apps-script-code-locally-in-vs-code-and-deploy-it-with-clasp-9a4273e2d018>
+
+
+The four commands to master in clasp are:
+
+- clasp login
+- clasp clone
+- clasp push -w
+- clasp pull
