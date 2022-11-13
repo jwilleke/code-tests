@@ -7,19 +7,20 @@ function testPileOfFiles() {
   const fromPath = '/mydata/family/Jim/identities';
   // force a permission dialog with this comment 
   // DriveApp.getRootFolder()
-  console.log('Simple File List:');
+  console.log(`Simple File List for: ${fromPath}:`);
   console.log(ff.pileOfFiles({ start: fromPath }));
-  console.log('Simple Image File List (NO SUBFOLDERS):');
+  console.log(`Simple Image File List for:  ${fromPath} (NO SUBFOLDERS):`);
   console.log(ff.pileOfFiles({
     start: fromPath,
     mimeTypes: ['image/jpeg', 'image/png'],
     includeSubfolders: false
   }))
-  console.log('Simple Folder List AND COUNT OF google-apps.document:');
+  const theseMimeTypes =[ 'application/vnd.google-apps.document'];
+  console.log(`Simple Folder List for: ${fromPath}  AND COUNT OF ${JSON.stringify(theseMimeTypes)}`);
   const pile = ff.pileOfFiles({
     includeSubfolders: true,
     start: fromPath,
-    mimeTypes: [ 'application/vnd.google-apps.document']
+    mimeTypes: theseMimeTypes
   })
  // dedup by folder path
   const map = new Map(pile.map(({folderPath})=>([folderPath, 0])))
