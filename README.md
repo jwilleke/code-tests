@@ -29,7 +29,7 @@ My Detailed Docs <https://docs.google.com/document/d/14jpnrHIrBDYQ5UzOLCdZSlv0WN
 
 The four commands to master in clasp are:
 
-- clasp login
+- clasp login 1HwK90MxJ8bNSfrrwsGKTbsvAfBSghCsSM7LtSzzyw8wTBtSz1PJQ3obG
 - clasp clone
 - clasp push -w
 - clasp pull

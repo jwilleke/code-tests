@@ -66,5 +66,4 @@ function getListOfDocs(FolderID, sheet) {
   catch (err) {
     return false;
   }
-
 }
