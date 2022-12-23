@@ -1,6 +1,5 @@
 
 const sheetForLogs = "sheetLogs";
-const logsTarget =
 
   function myFunction() {
 
@@ -13,10 +12,11 @@ const logsTarget =
  */
 function onEditTimeStamp(e) {
   const rangeModified = e.range;
+  const sheetModifiedName = rangeModified.getSheet().getName()
   const logsTarget = e.source.getSheetByName(sheetForLogs);
   Logger.log(`A1 Notation rangeModified: ${rangeModified.getA1Notation()}`);
   Logger.log(`Sheet Name: ${sheetModifiedName}`);
-  Logger.log(`rowModified: ${rowModified}`);
-  Logger.log(`columnModified: ${columnModified}`);
+  //Logger.log(`rowModified: ${rowModified}`);
+  //Logger.log(`columnModified: ${columnModified}`);
   logsTarget.appendRow([new Date(), rangeModified.getSheet().getSheetName(), rangeModified.getA1Notation()])
 }

@@ -43,3 +43,11 @@ The four commands to master in clasp are:
 - See and download all your Google Drive files <https://www.googleapis.com/auth/drive.readonly>
 - View groups on your domain <https://www.googleapis.com/auth/admin.directory.group.readonly>
 - See info about users on your domain <https://www.googleapis.com/auth/admin.directory.user.readonly>
+
+
+## Errors
+
+
+
+Dec 23, 2022, 5:12:00 AM	Error	ReferenceError: sheetModifiedName is not defined
+    at onEditTimeStamp(onEditTimeStamp:18:29)
