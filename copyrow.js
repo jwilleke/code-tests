@@ -11,11 +11,12 @@ function myFunctionTwo() {
 
 
 
-function myFunction() {
+function myCopyfunction() {
   var ss = SpreadsheetApp.openByUrl('https://docs.google.com/spreadsheets/d/1_aL5HOiEVUCf9Zz_qocSRdnd9ZSqBDT9tdke6V4rH_I/edit');
-  Logger.log(ss.getName());
+  Logger.log(`SpreadSheet Name: ${ss.getName()}`);
   const sheetX = ss.getSheetByName("copy-row");
   const sheetY = ss.getSheetByName("copy-row-to");
+  copyRow(sheetX, sheetY);
 }
 
 /**
@@ -24,13 +25,13 @@ function myFunction() {
  * @param {*} sheetY 
  */
 function copyRow(sheetX, sheetY) {
-  var ss = SpreadsheetApp.openByUrl('https://docs.google.com/spreadsheets/d/1_aL5HOiEVUCf9Zz_qocSRdnd9ZSqBDT9tdke6V4rH_I/edit');
-  Logger.log(ss.getName());
-  var sheet = ss.getSheetByName("copy-row");
   const row = sheetX.getLastRow();
+  Logger.log(`Copying row ${row} from Sheet: ${sheetX.getName()}`);
   var valuesToCopy = sheetX.getRange(row, 1, 1, sheetX.getLastColumn()).getValues();
-  Logger.log(valuesToCopy);
-  sheet.getRange(sheetY.getLastRow() + 1, 1, 1, valuesToCopy[0].length).setValues(valuesToCopy);
+  Logger.log(`Values: ${valuesToCopy}`);
+  let toRow = sheetY.getLastRow() + 1;
+  Logger.log(`Copying To row ${toRow} on Sheet: ${sheetY.getName()}`);
+  sheetY.getRange(toRow, 1, 1, valuesToCopy[0].length).setValues(valuesToCopy);
 }
 
 /**
