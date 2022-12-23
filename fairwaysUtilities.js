@@ -58,50 +58,6 @@ function getCellRangeByRow(columnName, row) {
 }
 
 /**
- * gets value of a cell specified by columnName and row
- */
-function getCellValueByColumnName(sheet, columnName, row) {
-  let cell = getCellRangeByColumnName(sheet, columnName, row);
-  // so if we do not return anything on null value we are returning null so why is this here?
-  // do we throw an exception?
-  if (cell != null) {
-    return cell.getValue();
-  }
-}
-
-/**
- * gets the column as a range
- */
-function getColumnRangeByName(sheet, columnName) {
-  let data = sheet.getRange("A1:1").getValues();
-  let column = data[0].indexOf(columnName);
-  if (column != -1) {
-    return sheet.getRange(2, column + 1, sheet.getMaxRows());
-  }
-}
-
-/**
- * Get all values in a column
- */
-function getColumnValuesByName(sheet, columnName) {
-  let column = getColumnRangeByName(sheet, columnName);
-  if (column != null) {
-    return column.getValues();
-  }
-}
-
-/**
- * getColumnIndexByName()
- */
-function getColumnIndexByName(sheet, columnName) {
-  data = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues();//Get 2D array of all values in row one
-  data = data[0];//Get the first and only inner array
-  return data.indexOf(columnName) + 1; //Arrays are zero indexed- so add 1
-}
-
-// by row
-
-/**
  * gets range of a cell specified by a columnName and row
  */
 function getCellRangeByColumnName(sheet, columnName, row) {

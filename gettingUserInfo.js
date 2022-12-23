@@ -1,6 +1,6 @@
 const domain = "willeke.com";
 
-function myFunction() {
+function myFunction3() {
   var primaryEmail='molly@willeke.com'
   getUserObject(primaryEmail)
 }

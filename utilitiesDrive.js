@@ -2,7 +2,7 @@
  * https://docs.google.com/document/d/1kbbs2dLUUXO-xTPRRyhTd6mTSHcjk7T3LeJ2rDeJnCI/
  */
 
-function myFunction() {
+function myFunction4() {
   var testFileID = '1xt7RH9hPHMfL44-T7Pnih7z5WDX21wBeKVtrwsTflNE';
   Logger.log(`testFileID for File: ${testFileID}`);
   fileInfo(testFileID);
