@@ -32,3 +32,15 @@ function testPileOfFiles() {
     count
   })))
 }
+
+
+function getStockPrice() {
+  var symbol = "AAPL";
+  var url = "https://finance.google.com/finance/quote/" + symbol + ":NASDAQ?output=json";
+  Logger.log(url);
+  var response = UrlFetchApp.fetch(url);
+  var content = response.getContentText();
+  var json = JSON.parse(content.substring(6));
+  var price = json[0].l;
+  return price;
+}

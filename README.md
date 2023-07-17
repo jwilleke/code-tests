@@ -30,9 +30,9 @@ My Detailed Docs <https://docs.google.com/document/d/14jpnrHIrBDYQ5UzOLCdZSlv0WN
 The four commands to master in clasp are:
 
 - clasp login 1HwK90MxJ8bNSfrrwsGKTbsvAfBSghCsSM7LtSzzyw8wTBtSz1PJQ3obG
-- clasp clone
-- clasp push -w
-- clasp pull
+- clasp clone - clones script from Google (One time thing)
+- clasp push -w - saves to Google (Then watches for you to save file and pushes to Google Every time)
+- clasp pull - pulls script from Google
 
 ## Project OAuth Scopes
 
@@ -44,10 +44,7 @@ The four commands to master in clasp are:
 - View groups on your domain <https://www.googleapis.com/auth/admin.directory.group.readonly>
 - See info about users on your domain <https://www.googleapis.com/auth/admin.directory.user.readonly>
 
-
 ## Errors
-
-
 
 Dec 23, 2022, 5:12:00 AM	Error	ReferenceError: sheetModifiedName is not defined
     at onEditTimeStamp(onEditTimeStamp:18:29)
