@@ -48,3 +48,41 @@ The four commands to master in clasp are:
 
 Dec 23, 2022, 5:12:00 AM	Error	ReferenceError: sheetModifiedName is not defined
     at onEditTimeStamp(onEditTimeStamp:18:29)
+
+## People API
+
+### personFields
+
+string (FieldMask format)
+
+Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Defaults to all fields if not set. Valid values are:
+
+- addresses
+- ageRanges
+- biographies
+- birthdays
+- calendarUrls
+- clientData
+- coverPhotos
+- emailAddresses
+- events
+- externalIds
+- genders
+- imClients
+- interests
+- locales
+- locations
+- memberships
+- metadata
+- miscKeywords
+- names
+- nicknames
+- occupations
+- organizations
+- phoneNumbers
+- photos
+- relations
+- sipAddresses
+- skills
+- urls
+- userDefined

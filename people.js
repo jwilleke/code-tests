@@ -11,7 +11,7 @@ function getConnections() {
   try {
     // Get the list of connections/contacts of user's profile
     const people = People.People.Connections.list('people/me', {
-      personFields: 'names,emailAddresses'
+      personFields: 'names,emailAddresses,memberships,addresses'
     });
     // Print the connections/contacts
     console.log('Connections: %s', JSON.stringify(people, null, 2));
