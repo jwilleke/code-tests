@@ -11,10 +11,10 @@ function getConnections() {
   try {
     // Get the list of connections/contacts of user's profile
     const people = People.People.Connections.list('people/me', {
-      personFields: 'names,emailAddresses,memberships,addresses'
+      personFields: 'names,nicknames,emailAddresses,memberships,addresses'
     });
     // Print the connections/contacts
-    console.log('Connections: %s', JSON.stringify(people, null, 2));
+    Logger.log('Connections: %s', JSON.stringify(people, null, 2));
   } catch (err) {
     // TODO (developers) - Handle exception here
     console.log('Failed to get the connection with an error %s', err.message);
@@ -31,10 +31,10 @@ function getSelf() {
     // Get own user's profile using People.getBatchGet() method
     const people = People.People.getBatchGet({
       resourceNames: ['people/me'],
-      personFields: 'names,emailAddresses'
+      personFields: 'names,nicknames,emailAddresses'
       // Use other query parameter here if needed
     });
-    console.log('Myself: %s', JSON.stringify(people, null, 2));
+    Logger.log('Myself: %s', JSON.stringify(people, null, 2));
   } catch (err) {
     // TODO (developer) -Handle exception
     console.log('Failed to get own profile with an error %s', err.message);
