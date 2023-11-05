@@ -1,18 +1,5 @@
-/**
- * Creates a menu 'Update Folder List'
- * Clicking it would update the list
- */
-function onOpen(e) {
-//function notOnOpen(e) {
-  const ui = SpreadsheetApp.getUi();
-  ui.createMenu('Update Folder List')
-    .addItem('Update Folder List', 'listFolder')
-    .addToUi();
-}
 
-
-function listFolder() {
-  
+function listFolder() {  
   // forces this code to this sheet
   const testSpreadsSheetID = "1_aL5HOiEVUCf9Zz_qocSRdnd9ZSqBDT9tdke6V4rH_I";
   const testSS = SpreadsheetApp.openById(testSpreadsSheetID);
@@ -26,7 +13,8 @@ function listFolder() {
   //Send the info to the function
   var rslt = getListOfDocs(folderID, testSheet);
   if (rslt) {
-    SpreadsheetApp.getActiveSpreadsheet().toast("All done!!", "Success", 5)
+    SpreadsheetApp.getActiveSpreadsheet().toast("All done!!", "Success", 5);
+
   }
   else {
     SpreadsheetApp.getActiveSpreadsheet().toast("Something went wrong!!", "FAIL", 5)
@@ -42,10 +30,11 @@ function listFolder() {
  * @return {boolean} done returns true if done
  */
 function getListOfDocs(FolderID, sheet) {
-  try {
+  //try {
     var fld = DriveApp.getFolderById(FolderID);
     const folderName = fld.getName();
-    SpreadsheetApp.getActiveSpreadsheet().toast("Listing files in ", "folderName", 5)
+    SpreadsheetApp.getActiveSpreadsheet().toast("Listing files in ", "folderName", 5);
+    Logger.log(`Listing files in: ${folderName}`)
     var files = fld.getFiles();
     var rslts = [];
     while (files.hasNext()) {
@@ -62,8 +51,9 @@ function getListOfDocs(FolderID, sheet) {
     headers.setValues([[headerName, 'Link to File']]);
 
     return true;
-  }
-  catch (err) {
-    return false;
-  }
+  // }
+  // catch (err) {
+  //  Logger.log(`Listing files in: ${folderName}==> ${err}`)
+  //  return false;
+  // }
 }

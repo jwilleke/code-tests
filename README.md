@@ -46,7 +46,7 @@ The four commands to master in clasp are:
 
 ## Errors
 
-Dec 23, 2022, 5:12:00 AM	Error	ReferenceError: sheetModifiedName is not defined
+Dec 23, 2022, 5:12:00 AM Error ReferenceError: sheetModifiedName is not defined
     at onEditTimeStamp(onEditTimeStamp:18:29)
 
 ## People API
